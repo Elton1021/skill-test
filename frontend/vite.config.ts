@@ -14,7 +14,12 @@ export default ({ mode }: { mode: string }) => {
       }
     },
     server: {
-      open: '/app'
+      host: '0.0.0.0',
+      port: 5173,
+      strictPort: true,
+      watch: {
+        usePolling: true
+      }
     }
   });
 };
