@@ -14,14 +14,14 @@ func main() {
 	cfg := config.Load()
 
 	// Initialize services
-	reportService := service.NewReportService()
+	studentsService := service.NewStudentsService()
 
 	// Initialize handlers
 	healthHandler := handler.NewHealthHandler()
-	reportHandler := handler.NewReportHandler(reportService)
+	studentsHandler := handler.NewStudentsHandler(studentsService)
 
 	// Setup routes
-	r := routes.SetupRoutes(healthHandler, reportHandler)
+	r := routes.SetupRoutes(healthHandler, studentsHandler)
 
 	// Log startup message
 	log.Printf("🚀 Go microservice starting on port %s", cfg.Port)

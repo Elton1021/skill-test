@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   # PostgreSQL Database
@@ -16,7 +16,7 @@ services:
       - ./seed_db/tables.sql:/docker-entrypoint-initdb.d/01-tables.sql
       - ./seed_db/seed-db.sql:/docker-entrypoint-initdb.d/02-seed.sql
     networks:
-      - school_network
+      - db_network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -40,7 +40,8 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - school_network
+      - api_network
+      - db_network
     restart: unless-stopped
 
   # Frontend Service
@@ -59,7 +60,7 @@ services:
     depends_on:
       - backend
     networks:
-      - school_network
+      - api_network
     restart: unless-stopped
 
   # Go Microservice
@@ -68,17 +69,19 @@ services:
       context: ./go-service
       dockerfile: Dockerfile
     container_name: go_microservice
-    environment:
-      PORT: 8080
+    env_file:
+      - ./go-service/.env
     ports:
       - 8080:8080
     networks:
-      - school_network
+      - api_network
     restart: unless-stopped
 
 volumes:
   postgres_data:
 
 networks:
-  school_network:
+  api_network:
+    driver: bridge
+  db_network:
     driver: bridge

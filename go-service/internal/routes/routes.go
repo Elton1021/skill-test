@@ -9,7 +9,7 @@ import (
 
 func SetupRoutes(
 	healthHandler *handler.HealthHandler,
-	reportHandler *handler.ReportHandler,
+	studentsHandler *handler.StudentsHandler,
 ) *gin.Engine {
 	r := gin.Default()
 
@@ -28,7 +28,7 @@ func SetupRoutes(
 	{
 		students := v1.Group("/students")
 		{
-			students.GET("/:id/report", reportHandler.GetStudentReport)
+			students.GET("/:id/report", studentsHandler.GetStudentReport)
 		}
 	}
 

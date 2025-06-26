@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "3ccdc4fd-125f-4a01-acfd-a9bcb61f6991",
+		"name": "Go Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12017031"
+	},
+	"item": [
+		{
+			"name": "Student report",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:5173"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:5173/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"136\", \"Google Chrome\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "x-csrf-token",
+						"value": "79a5f989-bc9a-4d8d-ad59-66386c51ee7d"
+					},
+					{
+						"key": "Cookie",
+						"value": "__stripe_mid=715aca34-c3a3-4853-a202-f971077248ab8f81a7; _ga=GA1.1.1531523844.1748087737; __next_hmr_refresh_hash__=ff3b6088952e9b7ed73c05c5c2ccf8d5633457081244afec; _ga_ZF8HRB35ZJ=GS2.1.s1750710998$o15$g0$t1750710998$j60$l0$h0; accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwicm9sZUlkIjoxLCJjc3JmX2htYWMiOiI2MmYxOGZmYTIzMGI4MTk0ZDY4ZDg4MDVmMTJiYzQzMzc1YTRjM2VmNWQ4M2E2NGVkODBlMjAzMjA4NWJjNDdiIiwiaWF0IjoxNzUwODgwMzIyLCJleHAiOjE3NTA4ODEyMjJ9.aRgSIp3Y4WLzTZCB02xw1dgSlvN-b5atiTYCVyD5GBM; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwicm9sZUlkIjoxLCJpYXQiOjE3NTA4ODAzMjIsImV4cCI6MTc1MDkwOTEyMn0.uQ-_FR9n8BVcTfEH41YmM33qfx0LoVUqKJXbXquBbaQ; csrfToken=79a5f989-bc9a-4d8d-ad59-66386c51ee7d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/students/1/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"1",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

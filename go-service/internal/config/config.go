@@ -5,8 +5,8 @@ import (
 )
 
 type Config struct {
-	Port string
-	Env  string
+	Port    string
+	ApiURL  string
 }
 
 func Load() *Config {
@@ -15,13 +15,13 @@ func Load() *Config {
 		port = "8080"
 	}
 
-	env := os.Getenv("ENV")
-	if env == "" {
-		env = "development"
+	apiURL := os.Getenv("API_URL")
+	if apiURL == "" {
+		apiURL = "http://backend:5007"
 	}
 
 	return &Config{
-		Port: port,
-		Env:  env,
+		Port:   port,
+		ApiURL: apiURL,
 	}
 }
